@@ -1,7 +1,15 @@
+let emitter;
+
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(640, 240);
+  emitter = new Emitter(width / 2, 20);
 }
 
 function draw() {
-  background(220);
+  background(255);
+
+  let gravity = createVector(0, 0.1);
+  emitter.applyForce(gravity);
+  emitter.addParticle();
+  emitter.run();
 }
