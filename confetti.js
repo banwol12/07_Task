@@ -15,4 +15,8 @@ class Confetti extends Particle {
     square(0, 0, 12);
     pop();
   }
+
+  edge() {
+    // 콘페티는 튕기지 않음 — 빈 구현으로 오버라이드
+  }
 }

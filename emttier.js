@@ -14,6 +14,24 @@ class Emitter {
     }
   }
 
+    edge() {
+    const r = this.r;
+        if (this.position.y > height - r) {
+            this.velocity.y *= -0.9;
+            this.position.y = height - r;
+        }
+        if (this.position.y < r) {
+            this.velocity.y *= -0.9;
+            this.position.y = r;
+        }   if (this.position.x > width - r) {
+            this.velocity.x *= -0.9;
+            this.position.x = width - r;
+        }   if (this.position.x < r) {
+            this.velocity.x *= -0.9;
+            this.position.x = r;
+        }
+    }
+
   applyForce(force) {
     for (let p of this.particles) {
       p.applyForce(force);
